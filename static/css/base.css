@@ -1,0 +1,24 @@
+#upr_logo {
+	height: 50%;
+	width: 50%
+}
+
+#header {
+	margin-top: 50px;
+	padding: 5px;
+	background-color: #ffe0b0; 
+}
+
+#menu {
+	
+}
+
+.center {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map {
+	margin-top: 100px;
+}

@@ -6,6 +6,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="static/css/base.css" />
 
 	<style>
 		#map {
@@ -41,10 +43,26 @@
 	</style>
 </head>
 <body>
-	<div id="map"></div>
+
+	<div id="header" class="pure-g">
+		<div class="pure-u-1-4"></div>
+		<div class="pure-u-1-4">
+			<img id="upr_logo" src="static/images/upr_logo.png" />
+		</div>
+		<div class="pure-u-1-4">
+			<h1>UPR Map Visualization</h1>
+		</div>
+		<div class="pure-u-1-4"></div>
+	</div>
+	<div>
+	</div>
+
+
+
+	<div id="map" class="center map"></div>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="pr.js"></script>
 	<script type="text/javascript">
 
