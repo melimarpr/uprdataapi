@@ -1,71 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>UPR Data</title>
-	<meta charset="utf-8" />
+function onMapGenerate(){
+		uni = $( "#recinto option:selected" ).text();
+		console.log(uni);
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-	<link rel="stylesheet" href="static/css/base.css" />
-
-	<style>
-		#map {
-			width: 800px;
-			height: 500px;
-		}
-
-		.info {
-			padding: 6px 8px;
-			font: 14px/16px Arial, Helvetica, sans-serif;
-			background: white;
-			background: rgba(255,255,255,0.8);
-			box-shadow: 0 0 15px rgba(0,0,0,0.2);
-			border-radius: 5px;
-		}
-		.info h4 {
-			margin: 0 0 5px;
-			color: #777;
-		}
-
-		.legend {
-			text-align: left;
-			line-height: 18px;
-			color: #555;
-		}
-		.legend i {
-			width: 18px;
-			height: 18px;
-			float: left;
-			margin-right: 8px;
-			opacity: 0.7;
-		}
-	</style>
-</head>
-<body>
-
-	<div id="header" class="pure-g">
-		<div class="pure-u-1-4"></div>
-		<div class="pure-u-1-4">
-			<img id="upr_logo" src="static/images/upr_logo.png" />
-		</div>
-		<div class="pure-u-1-4">
-			<h1>UPR Map Visualization</h1>
-		</div>
-		<div class="pure-u-1-4"></div>
-	</div>
-	<div>
-	</div>
-
-
-
-	<div id="map" class="center map"></div>
-
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="pr.js"></script>
-	<script type="text/javascript">
-
+		$("#map").html();
 		var map = L.map('map').setView([18.185678, -66.270575], 9);
 
 		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
@@ -165,8 +102,10 @@
 		}
 
                 var moreData;
-                
-                $.getJSON("index.php", function(data) {
+                http = "http://localhost/uprdataapi/api.php?uni="+uni;
+                console.log(http);
+                $.getJSON(http, function(data) {
+                	//console.log(data);
                     //console.log(data["UTUADO"]["AVG"]);
                     moreData = data;
                     geojson = L.geoJson(municipalitiesData, {
@@ -206,6 +145,4 @@
                       return dict[char] || char;
                     });
                 }
-	</script>
-</body>
-</html>
+}

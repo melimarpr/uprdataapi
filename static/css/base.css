@@ -1,6 +1,6 @@
 #upr_logo {
-	height: 50%;
-	width: 50%
+	height: 65%;
+	width: 65%
 }
 
 #header {
@@ -10,7 +10,9 @@
 }
 
 #menu {
-	
+	margin-top: 10px;
+	padding: 5px;
+	background-color: #7aeaa4; 
 }
 
 .center {

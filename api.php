@@ -28,8 +28,9 @@ $opts = array(
               );
 
 $context = stream_context_create($opts);
-
-$file = file_get_contents('https://data.pr.gov/resource/admit.json?campus=RUM', false, $context);
+$university = $_GET['uni'];
+//printf("%s", $university);
+$file = file_get_contents('https://data.pr.gov/resource/admit.json?campus='.$university, false, $context);
 $data = json_decode($file);
 
 //var_dump($data[0]);
